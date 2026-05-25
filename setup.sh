@@ -38,32 +38,32 @@ echo "Packages installed successfully"
 
 DOTFILES_DIR="$HOME/dotfiles" #dotfiles directory
 
-REPO_URL="https://github.com/KratosGOW69/dotfiles.git"0.
+REPO_URL="https://github.com/KratosGOW69/dotfiles.git"
 
-#if [ -d "$DOTFILES_DIR" ]; then
-#    echo "DOTFILES directory already exists. Pulling latest changes..."
-#    cd "$DOTFILES_DIR"
-#    git pull origin main
-#else
-#    echo "Cloning DOTFILES repository..."
-#    git clone "$REPO_URL" "$DOTFILES_DIR"
-#fi
+if [ -d "$DOTFILES_DIR" ]; then
+    echo "DOTFILES directory already exists. Pulling latest changes..."
+    cd "$DOTFILES_DIR"
+    git pull origin main
+else
+    echo "Cloning DOTFILES repository..."
+    git clone "$REPO_URL" "$DOTFILES_DIR"
+fi
 
-#if [ -d "$DOTFILES_DIR" ]; then
-#   echo "📂 Updating dotfiles..."
-#    cd "$DOTFILES_DIR"
-#    git pull origin main
-#else
-#    echo "📥 Cloning dotfiles..."
-#    git clone "$REPO_URL" "$DOTFILES_DIR"
-#fi
+if [ -d "$DOTFILES_DIR" ]; then
+   echo "📂 Updating dotfiles..."
+    cd "$DOTFILES_DIR"
+    git pull origin main
+else
+    echo "📥 Cloning dotfiles..."
+    git clone "$REPO_URL" "$DOTFILES_DIR"
+fi
 
 # 3. Installing Oh My Zsh
 ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
-# ---------------------------------------------------------
-# Plugins for Zsh
-# ---------------------------------------------------------
+ #---------------------------------------------------------
+ #Plugins for Zsh
+ #---------------------------------------------------------
 echo "Plugins for Zsh..."
 
 if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
@@ -80,9 +80,9 @@ else
     echo "   ✅ zsh-syntax-highlighting already installed."
 fi
 
-# ---------------------------------------------------------
-# Powerlevel10k theme for Zsh
-# ---------------------------------------------------------
+ #---------------------------------------------------------
+ #Powerlevel10k theme for Zsh
+ #---------------------------------------------------------
 P10K_DIR="$ZSH_CUSTOM/themes/powerlevel10k"
 
 if [ ! -d "$P10K_DIR" ]; then
